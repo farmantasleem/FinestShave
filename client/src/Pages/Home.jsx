@@ -1,11 +1,19 @@
 import { Button, Heading, Stack, VStack,Text, Container,Image, Box, Center} from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import homeproduct from "../assets/homeproduct.jpg"
 import BestSeller from "../Components/Home/BestSeller";
 import Category from "../Components/Home/Category";
 import Compare from "../Components/Home/Compare";
-
+import { fetchProducts } from "../redux/productSlice";
 const Home=()=>{
+
+    const disptach=useDispatch();
+
+    useEffect(()=>{
+        disptach(fetchProducts())
+    },[])
+
     return(<Container overflow={"hidden"} p="0px" minW="100vw" maxW="100vw">
         <Stack p="10px" pt="40px" pl={{base:"10",md:"100px"}} pb={{base:"10px",md:"100px"}} justifyContent={"space-between"}  alignItems={"center"}  minW="100vw" bgColor={"rgb(16,23,24)"} direction={{base:"column-reverse",md:"row"}}>
             <Stack gap="20px" direction={"column"}  textAlign={"left"} overflow={"hidden"} minW="50%">
@@ -29,7 +37,10 @@ const Home=()=>{
      <Center pt="40px" pb="40px" bgColor="rgb(249,243,234)">
         <Compare/>
     </Center>
+    <Heading pb="20px" pt="20px" ml={{base:"10px",md:"80px"}} fontSize="30px" color="rgb(0,18,51)">Our Best Seller</Heading>
+    <Center>
     <BestSeller/>
+    </Center>
     </Container>
    
         

@@ -1,4 +1,7 @@
 import { Heading, HStack } from "@chakra-ui/react";
+import AllRoutes from "./Allroutes/allRoutes";
+import Footer from "./Components/Footer/Footer";
+
 import Navbar from "./Components/Navbar/Navbar";
 import NavbarMobile from "./Components/Navbar/NavbarMobile";
 import Home from "./Pages/Home";
@@ -13,7 +16,9 @@ function App() {
       </Heading>
       <NavbarMobile/>
     </HStack>
-  <Home/>
+  <AllRoutes/>
+  <Footer/>
+  
   </>
   );
 }
