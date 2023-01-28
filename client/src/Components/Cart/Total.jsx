@@ -1,27 +1,45 @@
 import { Button, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Total=()=>{
+const state=useSelector(state=>state.cart.data);
+const [total,settotal]=useState(0)
+const totalData=()=>{
+    let data=0
+        state.forEach(e => {
+            data+=(e.qty*e.product.cost*81)  
+        });
+
+        settotal(data)
+}
+
+useEffect(()=>{
+    totalData()
+},[state])
+
     return(
         <Stack direction={"column"} bgColor={"rgb(249,243,234)"} minW={{base:"",md:"400px"}} maxW="100vw" p="20px" gap="20px" maxH="400px">
             <Heading color="rgb(0,18,51)" fontSize="22px">Summary</Heading>
            <Stack direction={"column"}>
            <HStack minW={"full"} justifyContent="space-between">
                 <Text>Subtotal</Text>
-                <Text>$57.25</Text>
+                <Text>₹ {total}</Text>
             </HStack>
             <HStack minW={"full"} justifyContent="space-between">
                 <Text>Shipping Discount</Text>
-                <Text>$0.00</Text>
+                <Text>₹ 0.00</Text>
             </HStack>
             <HStack minW={"full"} justifyContent="space-between"> 
-                <Text>Tax (Calculated at checkout)</Text>
-                <Text>$0.00</Text>
+                <Text>Tax (Calculated at checkout 17%)</Text>
+                <Text>₹ {(total*17)/100}</Text>
             </HStack>
            </Stack>
            <HStack minW={"full"} justifyContent="space-between">
                 <Heading fontSize="22px">Balance</Heading>
-                <Heading fontSize="22px">$67</Heading>
+                <Heading fontSize="22px">₹ {((total*17)/100)+total} </Heading>
            </HStack>
 
            <Button color="rgb(249,243,234)" bgColor={"rgb(0,18,51)"}>Checkout</Button>
