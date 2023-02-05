@@ -43,6 +43,7 @@ export function fetchProducts(page=1,category=undefined,filter=1) {
             const data = await res.json();
             console.log(data)
             dispatch(setProducts(data));
+         
             dispatch(setStatus(STATUSES.IDLE));
         } catch (err) {
             console.log(err);

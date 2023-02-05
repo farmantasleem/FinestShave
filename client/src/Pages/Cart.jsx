@@ -1,4 +1,4 @@
-import { Heading, Stack } from "@chakra-ui/react";
+import { Heading, Stack,Image } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,7 +22,9 @@ const Cart=()=>{
           { cartData?.map((e)=>{
             return <CartItem productid={e.product._id} key={e.product._id} qty={e.qty} id={e._id} title={e.product.title} brand={e.product.brand} category={e.product.category} img={e.product.image} cost={e.product.cost} />
           })}
-
+        {
+          cartData?.length==0?<Image src="https://mir-s3-cdn-cf.behance.net/projects/404/54b13147340145.Y3JvcCw0MDUsMzE3LDAsNDI.png"/>:""
+        }
         </Stack>
 
     <Stack direction="column">

@@ -1,12 +1,23 @@
 import { Heading, HStack } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import AllRoutes from "./Allroutes/allRoutes";
 import Footer from "./Components/Footer/Footer";
 
 import Navbar from "./Components/Navbar/Navbar";
 import NavbarMobile from "./Components/Navbar/NavbarMobile";
 import Home from "./Pages/Home";
+import { getItem } from "./redux/cartSlice";
 
 function App() {
+  const auth=useSelector((state)=>state.user.auth);
+  
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    if(auth){
+      dispatch(getItem())
+    }
+  },[auth])
   return (
     <>
     <Navbar/>

@@ -1,6 +1,8 @@
-import {Checkbox, Center, Container,FormControl,FormLabel,FormErrorMessage, FormHelperText,Input,Tabs, TabList, TabPanels, Tab, TabPanel, Button, HStack, VStack } from "@chakra-ui/react";
+import {Checkbox, Center, Container,FormControl,FormLabel,FormErrorMessage, FormHelperText,Input,Tabs, TabList, TabPanels, Tab, TabPanel, Button, HStack, VStack, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 import { loginUser, signupUser } from "../redux/userSlice";
 
 const User = () => {
@@ -9,15 +11,24 @@ const User = () => {
       password:"",
       name:""
   })
+  const auth=useSelector((state)=>state.user.auth);
+  const toast=useToast()
 
   const dispatch=useDispatch()
   const handleLogin=()=>{
-      dispatch(loginUser(userData))
+      dispatch(loginUser(userData,toast))
   }
 
   const handleRegister=()=>{
-    dispatch(signupUser(userData))
+    dispatch(signupUser(userData,toast))
+
   }
+const navigate=useNavigate()
+  useEffect(()=>{
+    if(auth){
+    navigate("/")
+    }
+  },[auth])
   return (
     <Container bgColor={"rgb(0,18,51)"} minW="100%" minH={"500px"}>
     <Center>

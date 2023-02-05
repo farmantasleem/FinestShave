@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const userAuth=localStorage.getItem("TOKEN")
+const initialState={auth:userAuth?true:false,role:localStorage.getItem("role")||"user",signup:false}
 
-const initialState={auth:false,name:"user",signup:false}
 const userSlice=createSlice({
     name:'user',
     initialState:initialState,
@@ -10,9 +11,10 @@ const userSlice=createSlice({
             return {...state,auth:false}
         },
         loginSuccess(state,action){
-            return {...state,auth:true,name:action.payload}
+            return {...state,auth:true,role:action.payload}
         },
         loginFailed(state,action){
+            localStorage.removeItem("TOKEN")
             return {...state,auth:false}
         },
         signupSuccess(state,action){
@@ -29,7 +31,7 @@ export const {loginFailed,loginSuccess,signupFailure}=userSlice.actions
 
 export default userSlice.reducer
 
-export function loginUser(data){
+export function loginUser(data,toast){
     return async function (dispatch,getState){
           try{
             const sendData=await fetch("https://finestshave.onrender.com/user/login",{
@@ -40,18 +42,39 @@ export function loginUser(data){
             const resp=await sendData.json();
             if(resp?.token?.length>10){
                 localStorage.setItem("TOKEN",resp.token)
-                dispatch(loginSuccess())
+                toast({
+                    title: 'Login Success',
+                 
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+                localStorage.setItem("role",resp?.role)
+                dispatch(loginSuccess(resp.role))
             }else{
+                toast({
+                    title: 'Login Failed',
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
                 dispatch(loginFailed())
             }
             
           }catch(err){
+            toast({
+                title: 'Login Failed',
+             
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
            dispatch(loginFailed())
           }
     }
 }
 
-export function signupUser(data){
+export function signupUser(data,toast){
     return async function (dispatch,getState){
           try{
             const sendData=await fetch("https://finestshave.onrender.com/user/signup",{
@@ -61,8 +84,21 @@ export function signupUser(data){
             })
             const resp=await sendData.json();
             console.log(resp)
-            
+            toast({
+                title: 'SignUp Successfull',
+             
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              })
           }catch(err){
+            toast({
+                title: 'Signup Failed',
+             
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
            dispatch(signupFailure())
           }
     }

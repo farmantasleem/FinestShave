@@ -37,7 +37,7 @@ const Home=()=>{
      <Center pt="40px" pb="40px" bgColor="rgb(249,243,234)">
         <Compare/>
     </Center>
-    <Heading pb="20px" pt="20px" ml={{base:"10px",md:"80px"}} fontSize="30px" color="rgb(0,18,51)">Our Best Seller</Heading>
+    <Heading pb="20px" pt="20px" pl="60px" ml={{base:"10px",md:"80px"}} fontSize="30px" color="rgb(0,18,51)">Our Best Seller</Heading>
     <Center>
     <BestSeller/>
     </Center>

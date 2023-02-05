@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Img, Stack, Text,Button} from "@chakra-ui/react";
+import { Box, Heading, HStack, Img, Stack, Text,Button, useToast} from "@chakra-ui/react";
 import React from "react";
 import {MdAdd} from "react-icons/md"
 import {BiMinus} from 'react-icons/bi'
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 const CartItem=(props)=>{
     const{title,img,cost,category,id,qty,productid}=props
     const dispatch=useDispatch()
+    const toast=useToast()
     
     const increaseQty=()=>{
         let newQty=qty+1
@@ -20,7 +21,7 @@ const CartItem=(props)=>{
         dispatch(DecreaseQty(id,newQty))
     }
     const RemoveCart=(id)=>{
-        dispatch(RemoveCartItem(id))
+        dispatch(RemoveCartItem(id,toast))
     }
     return(<Stack  maxW={{base:"100%",md:"630px"}} direction={{base:"column",md:"row"}} p="10px" pb="20px" borderBottom={"1px"} borderBottomColor="rgb(214,217,222)">
             <Box bgColor={"rgb(239,224,202)"} maxW="300px"><Img maxW={{base:"100%",md:"200px" }}src={img}/></Box>

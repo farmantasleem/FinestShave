@@ -1,4 +1,4 @@
-import { Checkbox, Heading, Select, SimpleGrid, Stack, VStack } from "@chakra-ui/react";
+import { Checkbox, Heading, Select, SimpleGrid, Stack, useToast, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ const Shop = () => {
   const[category,setcategory]=useState(undefined)
   const[filter,setfilter]=useState(1)
   const dispatch=useDispatch()
+  const toast=useToast()
   useEffect(()=>{
     
     dispatch(fetchProducts(1,category,filter))

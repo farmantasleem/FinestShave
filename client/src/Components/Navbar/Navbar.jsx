@@ -6,16 +6,18 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 const Navbar=()=>{
     const state=useSelector((state)=>state.user)
-   
+    const cartItem=useSelector((state)=>state.cart.data);
+
+ 
     return(<HStack display={{base:"none",md:"flex"}} color="rgb(239,224,201)" p="15px" pl="30px" pr="30px" justifyContent={"space-between"} bgColor={"rgb(0,18,51)"}>
         <Heading letterSpacing={"1.5px"} fontSize={"25px"}>Finest Shave</Heading>
         <HStack>
-            <Button _hover={""} bgColor="transparent" ><NavLink to={"/"}>Home</NavLink></Button>
-            <Button _hover={""}bgColor="transparent"><NavLink to={"/shop"}>Shop</NavLink></Button>
-            <Button _hover={""} bgColor="transparent"><NavLink  to="/contact">Contact</NavLink></Button>
+        <NavLink to={"/"}><Button _hover={""} bgColor="transparent" >Home</Button></NavLink>
+        <NavLink to={"/shop"}> <Button _hover={""}bgColor="transparent">Shop</Button></NavLink>
+        <NavLink  to="/contact"> <Button _hover={""} bgColor="transparent">Contact</Button></NavLink>
             <Button _hover={""}bgColor="transparent">About</Button>
-            <Button _hover={""}bgColor="transparent"><NavLink  to={state.auth?"/dashboard":"/user"}>{state.auth?"Dashboard":"Login/Register"}</NavLink></Button>
-            <NavLink to="/cart"> <BsFillCartFill/></NavLink>
+            <NavLink  to={state.auth?"/dashboard":"/user"}>   <Button _hover={""}bgColor="transparent">{state.auth?"Dashboard":"Login/Register"}</Button></NavLink>
+            <NavLink style={{display:"flex",alignContent:"center",textAlign:"center",margin:"auto"}} hidden={!state.auth}  to="/cart" ><HStack><BsFillCartFill /> <Heading fontSize={"17px"}>({cartItem.length})</Heading></HStack></NavLink>
         </HStack>
     </HStack>)
 }

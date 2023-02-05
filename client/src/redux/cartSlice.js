@@ -1,3 +1,4 @@
+import { useToast } from "@chakra-ui/react";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={data:[],address:{}};
@@ -26,7 +27,8 @@ export default cartSlice.reducer;
 
 
 //Adding item to cart
-export const addItem=(productid)=>{
+export const addItem=(productid,toast,status)=>{
+  
     return async(dispatch,getState)=>{
             const userId=localStorage.getItem("TOKEN");
             if(userId?.length>10){
@@ -36,11 +38,62 @@ export const addItem=(productid)=>{
                     body:JSON.stringify({product:productid})
                 })
                 const data=await resp.json();
-                console.log(data)
+                dispatch(getItem())
+                if(resp.status==200){
+                    toast({
+                        title: 'Item Added to Cart',
+                     
+                        status: 'success',
+                        duration: 9000,
+                        isClosable: true,
+                      })
+                    status(true)
+                }else{
+                    toast({
+                        title: 'Item already in cart',
+                     
+                        status: 'error',
+                        duration: 9000,
+                        isClosable: true,
+                      })
+                }
+               
             }else{
-                alert("Login to add Item To Cart")
+              
+                toast({
+                    title: 'Login Required',
+                 
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
             }
     }
+}
+
+//order success
+export const Order=(toast)=>{
+    return async(dispatch,getState)=>{
+        const userId=localStorage.getItem("TOKEN");
+        if(userId?.length>10){
+            const resp=await fetch("https://finestshave.onrender.com/order",{
+                method:"POST",
+                headers:{"authorization":`bearer ${userId}`},
+            
+            })
+            const data=await resp.json();
+            toast({
+                title: 'Order Placed Successfully',
+             
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              })
+            dispatch(getItem())
+        }else{
+            alert("Login to add Item To Cart")
+        }
+}
 }
 
 //get Cart Item 
@@ -132,7 +185,7 @@ export const DecreaseQty=(cartId,qty)=>{
 
 //Add Address of Specific User
 
-export const AddAddress=(data)=>{
+export const AddAddress=(data,toast)=>{
     return async(dispatch,getState)=>{
         const user=localStorage.getItem("TOKEN");
         const resp=await fetch(`https://finestshave.onrender.com/address`,{
@@ -145,6 +198,13 @@ export const AddAddress=(data)=>{
         })
 
         const NewData=await resp.json();
+        toast({
+            title: 'Address Added Successfully',
+         
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
         console.log(NewData)
     }
 }
@@ -175,7 +235,7 @@ export const GetAddress=()=>{
 
 //Update Address of Specific User
 
-export const UpdateAddress=(data)=>{
+export const UpdateAddress=(data,toast)=>{
     return async(dispatch,getState)=>{
         const user=localStorage.getItem("TOKEN");
         const resp=await fetch(`https://finestshave.onrender.com/address`,{
@@ -186,6 +246,13 @@ export const UpdateAddress=(data)=>{
             },
             body:JSON.stringify(data)
         })
+         toast({
+                    title: 'Address Updated',
+                 
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                  })
 
         const NewData=await resp.json();
         dispatch(GetAddress())
@@ -196,7 +263,7 @@ export const UpdateAddress=(data)=>{
 
 // Delete Cart Item of Specific User
 
-export const RemoveCartItem=(id)=>{
+export const RemoveCartItem=(id,toast)=>{
     return async(dispatch,getState)=>{
         const user=localStorage.getItem("TOKEN");
         const resp=await fetch(`https://finestshave.onrender.com/cart/${id}`,{
@@ -206,6 +273,13 @@ export const RemoveCartItem=(id)=>{
                 "authorization":`bearer ${user}`
             }
         })
+        toast({
+            title: 'Item Removed',
+         
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
         dispatch(getItem())
     }
 }

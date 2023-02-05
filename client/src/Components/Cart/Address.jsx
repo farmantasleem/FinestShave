@@ -9,16 +9,18 @@ import { Stack,Heading, HStack,Text,Button, Modal,
     FormLabel,
     FormControl,
     Input,
-    SimpleGrid,} from "@chakra-ui/react";
+    SimpleGrid,
+    useToast,} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { AddAddress, GetAddress, UpdateAddress } from "../../redux/cartSlice";
 
 const Address=()=>{
-
+    const toast=useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const addressData=useSelector((state=>state.cart.address))
+    const state=useSelector(state=>state.cart.data);
     const [address,setaddress]=useState({
       fullname:"",
       landmark:"",
@@ -29,7 +31,7 @@ const Address=()=>{
 
     })
     const HandleAddress=()=>{
-      dispatch(AddAddress(address))
+      dispatch(AddAddress(address,toast))
     }
 
     const dispatch=useDispatch()
@@ -37,13 +39,13 @@ const Address=()=>{
       dispatch(GetAddress())
     },[])
     const HandleUpdate=()=>{
-      dispatch(UpdateAddress(address))
+      dispatch(UpdateAddress(address,toast))
     }
     useEffect(()=>{
       setaddress({address,...addressData});
     },[addressData])
     return(
-        <Stack direction="column" bgColor={"rgb(249,243,234)"} p="20px"> 
+        <Stack hidden={state.length==0} direction="column" bgColor={"rgb(249,243,234)"} p="20px"> 
         <Heading color="rgb(0,18,51)" fontSize="22px">Deliver to</Heading>
         <Stack direction="column">
         <HStack minW={"full"} justifyContent="space-between">
