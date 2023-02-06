@@ -13,7 +13,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="reactjs" />
-  <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=reduxtoolkit&logoColor=white" alt="redux" />
+  <img src="https://img.shields.io/badge/Redux_Toolkit-593D88?style=for-the-badge&logo=reduxtoolkit&logoColor=white" alt="redux" />
   <img src="https://img.shields.io/badge/Chakra%20UI-3bc7bd?style=for-the-badge&logo=chakraui&logoColor=white" alt="chakra-ui" />
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" />
   <img src="https://img.shields.io/badge/Rest_API-02303A?style=for-the-badge&logo=react-router&logoColor=white" alt="restAPI" />
@@ -190,7 +190,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 If you want to contact me, you can reach me through below handles. <br />
 [![linkedin](https://img.shields.io/badge/Farman_Malik-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/farmanarsh/)
-[![GitHub](https://img.shields.io/badge/Sufiyan_Shaikh-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/farmanfirnas)
+[![GitHub](https://img.shields.io/badge/Farman_Malik-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/farmanfirnas)
 
 
 
