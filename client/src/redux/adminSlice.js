@@ -1,5 +1,6 @@
 
 import { createSlice } from "@reduxjs/toolkit";
+import { logout } from "./userSlice";
 
 const initialState={cart:[],user:[],order:[],product:[],refund:[],recentuser:[]}
 const adminSlice=createSlice({
@@ -30,9 +31,13 @@ export const getAdminData=()=>{
                 const data=await resp.json();
                 dispatch(setAdminData(data))
                 console.log(data)
+                if(resp.status!==200){
+                    dispatch(logout())
+                }
             }
             catch(err){
                 alert(err.message)
+             
             }
     }
 }

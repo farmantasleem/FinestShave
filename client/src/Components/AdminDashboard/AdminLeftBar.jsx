@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import { getAdminData } from "../../redux/adminSlice";
 import { Additem } from "./AddItem";
 import { Refund } from "./Refund.admin";
+import { logout } from "../../redux/userSlice";
 
 export const AdminLeftBar=()=>{
     const dispatch=useDispatch();
@@ -47,7 +48,7 @@ export const AdminLeftBar=()=>{
                    <NavLink to="/dashboard/users"> <Button m="auto" justifyContent={"left"}   minW={"170px"} bgColor={"rgb(0,18,51)"} color="white"  leftIcon={<AiOutlineUser/>}>Users</Button></NavLink>
                  <NavLink to="/dashboard/cart">   <Button m="auto" justifyContent={"left"} minW={"170px"} bgColor={"rgb(0,18,51)"} color="white"  leftIcon={<BsBag/>}>Cart Item</Button></NavLink>
                     <Additem/>
-
+                    <Button onClick={()=>{dispatch(logout())}}>Log Out</Button>
             </Stack>
             {
                 <Routes>

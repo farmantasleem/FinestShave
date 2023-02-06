@@ -1,11 +1,14 @@
 import React from "react";
-import {   Drawer,  DrawerBody,Button, DrawerFooter,DrawerHeader,DrawerOverlay,  DrawerContent, DrawerCloseButton, VStack, useDisclosure,  } from '@chakra-ui/react'
+import {HStack ,Drawer,Heading, DrawerBody,Button, DrawerFooter,DrawerHeader,DrawerOverlay,  DrawerContent, DrawerCloseButton, VStack, useDisclosure,  } from '@chakra-ui/react'
 import {BsFillCartFill} from "react-icons/bs"
 import {RiMenu3Line} from "react-icons/ri"
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 function NavbarMobile() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
-  
+    const state=useSelector((state)=>state.user)
+    const cartItem=useSelector((state)=>state.cart.data);
     return (
       <>
         <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
@@ -24,12 +27,12 @@ function NavbarMobile() {
   
             <DrawerBody bgColor={"rgb(0,18,51)"}>
               <VStack color="rgb(239,224,201)">
-              <Button _hover={""} color="rgb(16,23,24)" bgColor="white">Home</Button>
-            <Button _hover={""}bgColor="transparent">Shop</Button>
-            <Button _hover={""} bgColor="transparent">Contact</Button>
-            <Button _hover={""}bgColor="transparent">About</Button>
-            <Button _hover={""}bgColor="transparent">Sign In</Button>
-            <BsFillCartFill/>
+         
+              <NavLink to={"/"}><Button _hover={""} color="rgb(16,23,24)" bgColor="white" >HOME</Button></NavLink>
+        <NavLink to={"/shop"}> <Button _hover={""}bgColor="transparent">SHOP</Button></NavLink>
+       
+            <NavLink  to={state.auth?"/dashboard":"/user"}>   <Button _hover={""}bgColor="transparent">{state.auth?"Dashboard":"LOGIN/REGISTER"}</Button></NavLink>
+            <NavLink style={{display:"flex",alignContent:"center",textAlign:"center",margin:"auto"}} hidden={!state.auth}  to="/cart" ><HStack><BsFillCartFill /> <Heading fontSize={"17px"}>({cartItem.length})</Heading></HStack></NavLink>
               </VStack>
             </DrawerBody>
   

@@ -11,7 +11,7 @@ export const Orders=()=>{
   
     return (
         <Container minW="100vw">
-            <SimpleGrid justifyItems={"center"}  columns={3} p="20px" gap="10px" justifyContent={"center"}>
+            <SimpleGrid justifyItems={"center"}  columns={{base:1,md:3}} p="20px" gap="10px" justifyContent={"center"}>
              
                {
                     state?.map((el)=>{

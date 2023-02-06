@@ -12,11 +12,10 @@ const Navbar=()=>{
     return(<HStack display={{base:"none",md:"flex"}} color="rgb(239,224,201)" p="15px" pl="30px" pr="30px" justifyContent={"space-between"} bgColor={"rgb(0,18,51)"}>
         <Heading letterSpacing={"1.5px"} fontSize={"25px"}>Finest Shave</Heading>
         <HStack>
-        <NavLink to={"/"}><Button _hover={""} bgColor="transparent" >Home</Button></NavLink>
-        <NavLink to={"/shop"}> <Button _hover={""}bgColor="transparent">Shop</Button></NavLink>
-        <NavLink  to="/contact"> <Button _hover={""} bgColor="transparent">Contact</Button></NavLink>
-            <Button _hover={""}bgColor="transparent">About</Button>
-            <NavLink  to={state.auth?"/dashboard":"/user"}>   <Button _hover={""}bgColor="transparent">{state.auth?"Dashboard":"Login/Register"}</Button></NavLink>
+        <NavLink to={"/"}><Button _hover={""} bgColor="transparent" >HOME</Button></NavLink>
+        <NavLink to={"/shop"}> <Button _hover={""}bgColor="transparent">SHOP</Button></NavLink>
+       
+            <NavLink  to={state.auth?"/dashboard":"/user"}>   <Button _hover={""}bgColor="transparent">{state.auth?"DASHBOARD":"LOGIN/REGISTER"}</Button></NavLink>
             <NavLink style={{display:"flex",alignContent:"center",textAlign:"center",margin:"auto"}} hidden={!state.auth}  to="/cart" ><HStack><BsFillCartFill /> <Heading fontSize={"17px"}>({cartItem.length})</Heading></HStack></NavLink>
         </HStack>
     </HStack>)

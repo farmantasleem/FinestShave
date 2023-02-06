@@ -42,7 +42,7 @@ export const getMyOrders=()=>{
 // Cancel Request Add
 
 
-export function CancelOrder(data){
+export function CancelOrder(data,toast){
     return async function (dispatch,getState){
         const userId=localStorage.getItem("TOKEN")
           try{
@@ -53,7 +53,13 @@ export function CancelOrder(data){
                 body:JSON.stringify(data)
             })
             const resp=await sendData.json();
-           
+            toast({
+                title: 'Cancel Requested',
+             
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              })
           }catch(err){
             console.log("err",err)
           }

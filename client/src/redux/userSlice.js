@@ -8,7 +8,9 @@ const userSlice=createSlice({
     initialState:initialState,
     reducers:{
         logout(state,action){
-            return {...state,auth:false}
+            localStorage.removeItem("TOKEN");
+            localStorage.removeItem("role")
+            return {...state,auth:false,role:"None"}
         },
         loginSuccess(state,action){
             return {...state,auth:true,role:action.payload}
@@ -27,7 +29,7 @@ const userSlice=createSlice({
     },
 })
 
-export const {loginFailed,loginSuccess,signupFailure}=userSlice.actions
+export const {loginFailed,loginSuccess,signupFailure,logout}=userSlice.actions
 
 export default userSlice.reducer
 
