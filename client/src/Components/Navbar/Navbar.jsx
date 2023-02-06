@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import {BsFillCartFill} from "react-icons/bs"
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navbar=()=>{
     const state=useSelector((state)=>state.user)
     const cartItem=useSelector((state)=>state.cart.data);
@@ -14,7 +14,7 @@ const Navbar=()=>{
         <HStack>
         <NavLink to={"/"}><Button _hover={""} bgColor="transparent" >HOME</Button></NavLink>
         <NavLink to={"/shop"}> <Button _hover={""}bgColor="transparent">SHOP</Button></NavLink>
-       
+<Button _hover={""}bgColor="transparent"><a href="mailto:iamfarmanmalik@gmail.com">CONTACT US</a></Button>
             <NavLink  to={state.auth?"/dashboard":"/user"}>   <Button _hover={""}bgColor="transparent">{state.auth?"DASHBOARD":"LOGIN/REGISTER"}</Button></NavLink>
             <NavLink style={{display:"flex",alignContent:"center",textAlign:"center",margin:"auto"}} hidden={!state.auth}  to="/cart" ><HStack><BsFillCartFill /> <Heading fontSize={"17px"}>({cartItem.length})</Heading></HStack></NavLink>
         </HStack>
