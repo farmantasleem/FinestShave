@@ -113,7 +113,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 <table>
   <tr>
-    <td><img maxW="50%" src="https://ibb.co/5496N4X"  alt="home" /></td>
+    <td><img maxW="50%" src="https://i.ibb.co/02Xcg2p/homepage.png"  alt="home" /></td>
     <td><img maxW="50%" src="https://i.ibb.co/Ld6KDL8/2.png"  alt="coupons" /></td>
   </tr>
   <tr>
