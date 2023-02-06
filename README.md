@@ -105,6 +105,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 
 <br />
+
 ## Home Page
 
 <img src="client/src/assets/homepage.png">
