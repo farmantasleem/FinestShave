@@ -28,7 +28,7 @@ const Home=()=>{
 
                 </Text>
             
-                <NavLink to={"/shop"}>        <Button fontSize={{base:"20px",md:"18px"}} rightIcon={<AiOutlineArrowRight/>} minH="45px" color="white" maxW={{"base":"100%",md:"220px"}} minW={{"base":"100%",md:"220px"}} bgColor={"rgb(0,18,51)"}>Take A Look</Button></NavLink>
+                <NavLink to={"/shop"}>        <Button _hover={""} fontSize={{base:"20px",md:"18px"}} rightIcon={<AiOutlineArrowRight/>} minH="45px" color="white" maxW={{"base":"100%",md:"220px"}} minW={{"base":"100%",md:"220px"}} bgColor={"rgb(0,18,51)"}>Take A Look</Button></NavLink>
           
             </Stack>
            <Box bgImage={homeproduct}  bgSize="100%" bgRepeat="no-repeat" maxW={{base:"100%",md:"500px"}} maxH={{base:"400px",md:"450px" }} minW={{base:"100%",md:"500px"}} minH={{base:"400px",md:"450px" }} ></Box>
