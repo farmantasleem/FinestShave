@@ -56,9 +56,7 @@ const Shop = () => {
         <Checkbox value="-1" onChange={()=>{setfilter(-1)}}  colorScheme={"blue"} iconSize="1rem">
           High to Low
         </Checkbox>
-        <Stack>
-          <h1>hello</h1>
-        </Stack>
+       
       </Stack>
 
 
