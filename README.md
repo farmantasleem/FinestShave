@@ -105,50 +105,36 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 
 <br />
+## Home Page
 
-## Glimpses of finestshave.vercel.app 🙈 :
-
-
-
-
-<table>
-  <tr>
-    <td><img maxW="50%" src="client/src/assets/homepage.png"  alt="home" /></td>
-    <td><img maxW="50%" src="client/src/assets/shoppage.png"  alt="product" /></td>
-  </tr>
-  <tr>
-   <td><img src="client/src/assets/cartpage.png"  alt="cartpage" /></td>
-    <td><img src="client/src/assets/userdashboard.png"  alt="userdashboard" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://i.ibb.co/hgKzhx8/5.png" alt="allProducts" /></td>
-    <td><img src="https://i.ibb.co/Ssqqj5b/6.png"  alt="men" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://i.ibb.co/2YpTQ8F/7.png"  alt="women" /></td>
-    <td><img src="https://i.ibb.co/qgxgjTX/8.png"  alt="kids" /></td>
-  </tr>
-   <tr>
-    <td><img src="https://i.ibb.co/w7QMFSm/9.png"   alt="women" /></td>
-    <td><img src="https://i.ibb.co/jVrqM5N/admin-1.png"   alt="kids" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://i.ibb.co/V2C33MP/admin-2.png"  alt="description" /></td>
-    <td><img src="https://i.ibb.co/r6ZFyXN/admin-3.png"   alt="descriptionDark" /></td>
-  </tr>
-    <tr>
-    <td><img src="https://i.ibb.co/XW6J312/admin5.png"   alt="description" /></td>
-  
-  </tr>
-    <tr>
-        <td><img maxW="100%" src="https://i.ibb.co/8dqSn8t/justshop4.png" alt="justshop4"  /></td>
-    <td><img maxW="50%" src="https://i.ibb.co/rHQwR06/mobile-2.png"   alt="description" /></td>
-  
-  </tr>
-
-</table>
-
+<img src="client/src/assets/homepage.png">
 <br />
+
+## Login & SignUp
+
+<img src="client/src/assets/homepage.png">
+<br />
+
+## Shop Page
+
+<img src="client/src/assets/shoppage.png">
+<br />
+
+## Cart Page
+
+<img src="client/src/assets/cartpage.png">
+<br />
+
+## User Dashboard Page
+
+<img src="client/src/assets/userdashboard.png">
+<br />
+
+## Admin Dashboard Page
+
+<img src="client/src/assets/adminpage.png">
+<br />
+
 
 
 
