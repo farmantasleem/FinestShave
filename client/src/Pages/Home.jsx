@@ -1,6 +1,8 @@
 import { Button, Heading, Stack, VStack,Text, Container,Image, Box, Center} from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import homeproduct from "../assets/homeproduct.jpg"
 import BestSeller from "../Components/Home/BestSeller";
 import Category from "../Components/Home/Category";
@@ -26,7 +28,7 @@ const Home=()=>{
 
                 </Text>
             
-                <Button fontSize={{base:"20px",md:"18px"}} minH="45px" color="black" maxW={{"base":"100%",md:"220px"}} minW={{"base":"100%",md:"220px"}} bgColor={"rgb(177,125,76)"}>Take A Look</Button>
+                <NavLink to={"/shop"}>        <Button fontSize={{base:"20px",md:"18px"}} rightIcon={<AiOutlineArrowRight/>} minH="45px" color="white" maxW={{"base":"100%",md:"220px"}} minW={{"base":"100%",md:"220px"}} bgColor={"rgb(0,18,51)"}>Take A Look</Button></NavLink>
           
             </Stack>
            <Box bgImage={homeproduct}  bgSize="100%" bgRepeat="no-repeat" maxW={{base:"100%",md:"500px"}} maxH={{base:"400px",md:"450px" }} minW={{base:"100%",md:"500px"}} minH={{base:"400px",md:"450px" }} ></Box>
