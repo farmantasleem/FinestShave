@@ -113,7 +113,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 ## Login & SignUp
 
-<img src="client/src/assets/homepage.png">
+<img src="client/src/assets/loginpage.png">
 <br />
 
 ## Shop Page
