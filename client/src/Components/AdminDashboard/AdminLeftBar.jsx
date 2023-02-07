@@ -43,7 +43,7 @@ export const AdminLeftBar=()=>{
               <Button m="auto"  justifyContent={"left"}  minW={"170px"} bgColor={"rgb(0,18,51)"} color="white" hidden="true" leftIcon={<RiDashboard2Line/>}>Dashboard</Button>
               <NavLink to="/dashboard/">   <Button m="auto"  justifyContent={"left"}  minW={"170px"} bgColor={"rgb(0,18,51)"} color="white" leftIcon={<RiDashboard2Line/>}>Dashboard</Button></NavLink>
                    <NavLink to="/dashboard/orders"> <Button m="auto" justifyContent={"left"} bgColor={"rgb(0,18,51)"} minW={"170px"}  color="white"  leftIcon={<AiOutlineShoppingCart />}>Orders</Button></NavLink>
-                   <NavLink to="/dashboard/refund"> <Button m="auto" justifyContent={"left"} bgColor={"rgb(0,18,51)"} minW={"170px"}  color="white"  leftIcon={<AiOutlineShoppingCart />}>Refund Request</Button></NavLink>
+                   <NavLink to="/dashboard/refund"> <Button m="auto" justifyContent={"left"} bgColor={"rgb(0,18,51)"} minW={"170px"}  color="white"  leftIcon={<AiOutlineShoppingCart />}>Cancel Orders</Button></NavLink>
                    <NavLink to="/dashboard/products"> <Button m="auto" justifyContent={"left"}   minW={"170px"} bgColor={"rgb(0,18,51)"} color="white"  leftIcon={<CgMenuGridO/>}>Products</Button></NavLink>
                    <NavLink to="/dashboard/users"> <Button m="auto" justifyContent={"left"}   minW={"170px"} bgColor={"rgb(0,18,51)"} color="white"  leftIcon={<AiOutlineUser/>}>Users</Button></NavLink>
                  <NavLink to="/dashboard/cart">   <Button m="auto" justifyContent={"left"} minW={"170px"} bgColor={"rgb(0,18,51)"} color="white"  leftIcon={<BsBag/>}>Cart Item</Button></NavLink>
