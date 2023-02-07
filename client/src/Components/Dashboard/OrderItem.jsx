@@ -20,7 +20,7 @@ const OrderItem=(props)=>{
         <Text pt="5px" pb="20px" fontSize={"14px"}>{!category?"Category":category}</Text>
         <Heading  pb="20px" fontSize={"14px"}>{"₹ "+cost}</Heading>
         <Button _hover={{color:"rgb(240,224,199)"}} borderRadius={"0px"} color="rgb(240,224,199)" textTransform={"uppercase"} bgColor="rgb(0,18,51)" m="auto">{status}</Button>
-        <Button _hover={{color:"rgb(240,224,199)"}} borderRadius={"0px"}  color="rgb(240,224,199)" bgColor="rgb(0,18,51)" disabled={status=="Cancelled"} onClick={()=>{dispatch(CancelOrder({productId,toast}))}}>Cancel Request</Button>
+        <Button _hover={{color:"rgb(240,224,199)"}} borderRadius={"0px"}  color="rgb(240,224,199)" bgColor="rgb(0,18,51)" disabled={status=="Cancelled"} onClick={()=>{dispatch(CancelOrder({productId,orderId},toast))}}>Cancel Request</Button>
     </Stack>
    )
 }
