@@ -46,7 +46,7 @@
 
 <h3 align="center"><a href="https://finestshave.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
-<h3 align="center"><a href="linkedinlink"><strong>Demo Video »</strong></a></h3>
+<h3 align="center"><a href="https://www.linkedin.com/posts/farmanarsh_heres-the-presentation-of-my-recently-built-activity-7028661147696324609-8DE9?utm_source=share&utm_medium=member_desktop"><strong>Demo Video »</strong></a></h3>
 
 
 <br />
