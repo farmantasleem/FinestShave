@@ -59,8 +59,8 @@
   <a href="#Contact">Author</a> &#10023;
 </p>
 
-It’s Group project where we've used MERN stack to make the JustShop.com with our creativity along with frontend and backend integration
-its Fully Responsive e-commerce web application that allows you to buy shoes & clothes online. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
+It’s Solo project where I've used MERN stack to make the FinestShave with  creativity along with frontend and backend integration
+its Fully Responsive e-commerce web application that allows you to buy Products. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
 
 <img src="https://i.ibb.co/VwbmL6p/Studio-Project.gif" width="800px" />
 
